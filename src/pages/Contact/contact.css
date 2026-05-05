@@ -1,0 +1,133 @@
+.contact_page {
+    background-color: #0f0f0f;
+    min-height: 100vh;
+    padding: 120px 8% 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Chap taraf: Ma'lumotlar */
+  .contact_info h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact_info p {
+    color: #aaa;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+  }
+  
+  .info_items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .info_item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .info_item h4 {
+    color: #00a82d;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+  }
+  
+  .info_item p {
+    color: #fff;
+    margin-bottom: 0;
+  }
+  
+  .social_links {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+    color: #00a82d;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  /* O'ng taraf: Forma */
+  .contact_form_wrapper {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #333;
+  }
+  
+  .contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .input_group label {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .input_group input, 
+  .input_group textarea {
+    background: #0f0f0f;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .input_group input:focus, 
+  .input_group textarea:focus {
+    border-color: #00a82d;
+    box-shadow: 0 0 10px rgba(0, 168, 45, 0.1);
+  }
+  
+  .send_btn {
+    background: #00a82d;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+  }
+  
+  .send_btn:hover {
+    background: #00ce37;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .contact_container {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+    
+    .contact_info h1 {
+      font-size: 2.5rem;
+    }
+  }

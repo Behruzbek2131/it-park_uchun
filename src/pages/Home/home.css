@@ -1,0 +1,214 @@
+/* home.css */
+
+:root {
+    --primary-green: #00a82d;
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-gray: #b0b0b0;
+    --white: #ffffff;
+}
+
+.home_page {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+/* 1. Hero Section */
+.hero_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 8%;
+    min-height: 80vh;
+}
+
+.hero_text {
+    flex: 1;
+    max-width: 600px;
+}
+
+
+
+.hero_text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.green_text {
+    color: var(--primary-green);
+}
+
+.hero_text p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.hero_btns {
+    display: flex;
+    gap: 20px;
+}
+
+.btn_main, .btn_sub {
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn_main {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.btn_main:hover {
+    background-color: #008a25;
+    transform: translateY(-3px);
+}
+
+.btn_sub {
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+}
+
+.btn_sub:hover {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.hero_image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero_image img {
+    /* width: 70%; */
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid var(--primary-green);
+}
+
+/* 2. Stats Bar */
+.stats_bar {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--card-bg);
+    padding: 40px 0;
+    margin: 0 8%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.stat_item h3 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+}
+
+.stat_item p {
+    color: var(--text-gray);
+    font-size: 1rem;
+}
+
+/* 3. Mentor Preview Section */
+.mentor_preview {
+    padding: 100px 8%;
+}
+
+.mentor_preview h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.mentor_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.mentor_card {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid #333;
+    border: 2px solid var(--primary-green);
+}
+
+/* .mentor_card:hover {
+    border-color: var(--primary-green);
+    transform: scale(1.01);
+} */
+
+.mentor_img {
+    flex: 1;
+    height: 350px;
+}
+
+.mentor_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mentor_text {
+    flex: 1.5;
+    padding: 40px;
+}
+
+.mentor_text .btn_sub { /* yoki sizda tugma qaysi klassda bo'lsa */
+    display: inline-block;
+    margin-top: 20px; /* Matndan pastga suradi */
+    padding: 10px 25px; /* Tugma ichidagi bo'shliqni chiroyli qiladi */
+    font-size: 14px;
+}
+
+.mentor_text h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--primary-green);
+}
+
+.mentor_text p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+}
+
+/* Responsive (Mobil qurilmalar uchun) */
+@media (max-width: 992px) {
+    .hero_section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    .hero_text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero_btns {
+        justify-content: center;
+    }
+
+    .hero_image {
+        display: none; /* Mobil versiyada rasmni yashirish yoki kichraytirish mumkin */
+    }
+
+    .mentor_card {
+        flex-direction: column;
+    }
+
+    .mentor_card:nth-child(even) {
+        flex-direction: column; /* 2-kartochka o'ngda rasm bo'lsa ham mobilada bir xil bo'ladi */
+    }
+}
