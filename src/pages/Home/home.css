@@ -88,7 +88,7 @@
 }
 
 .hero_image img {
-    /* width: 70%; */
+    max-width: 100%; /* Rasm konteynerdan chiqib ketmasligi uchun */
     height: auto;
     border-radius: 20px;
     border: 2px solid var(--primary-green);
@@ -201,9 +201,15 @@
     }
 
     .hero_image {
-        display: none; /* Mobil versiyada rasmni yashirish yoki kichraytirish mumkin */
+        justify-content: center; /* Rasmni markazga oladi */
+        margin-top: 30px;        /* Matn va rasm orasida masofa */
+        order: 2;                /* Agar flex-direction: column bo'lsa, rasmni pastga tushiradi */
     }
 
+    .hero_image img {
+        width: 80%;             /* Mobil ekranda rasmni biroz kichraytiramiz */
+        border-radius: 15px;    /* Burchaklarni ham mos ravishda yumshatamiz */
+    }
     .mentor_card {
         flex-direction: column;
     }

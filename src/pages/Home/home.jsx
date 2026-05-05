@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './home.css';
 
 import heroImg from '../../assets/image/it_horazm.jpg';
+import mentorImg from '../../assets/image/mentor.jpg'; 
 
 const Home = () => {
   return (
@@ -35,7 +36,7 @@ const Home = () => {
             <div className="mentor_cards">
                 <div className="mentor_card">
                     <div className="mentor_img">
-                        <img src="src/assets/image/mentor.jpg" alt="mentor" />
+                        <img src={mentorImg} alt="mentor" />
                     </div>
                     <div className="mentor_text">
                         <h3>Mentor Ismi</h3>
@@ -52,12 +53,12 @@ const Home = () => {
                         <Link to="/teachers/2" className="btn_sub">Batafsil</Link>
                     </div>
                     <div className="mentor_img">
-                        <img src="src/assets/image/mentor.jpg" alt="mentor" />
+                        <img src={mentorImg} alt="mentor" />
                     </div>
                 </div>
                 <div className="mentor_card">
                     <div className="mentor_img">
-                        <img src="src/assets/image/mentor.jpg" alt="mentor" />
+                        <img src={mentorImg} alt="mentor" />
                     </div>
                     <div className="mentor_text">
                         <h3>Mentor Ismi</h3>
