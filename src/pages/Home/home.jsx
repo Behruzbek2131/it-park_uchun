@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './home.css';
 
+import heroImg from '../../assets/image/it_horazm.jpg';
+
 const Home = () => {
   return (
     <div className="home_page">
@@ -16,7 +18,7 @@ const Home = () => {
           </div>
         </div>
         <div className="hero_image">
-            <img src="src/assets/image/it_horazm.jpg" alt="it horazm" />
+            <img src={heroImg} alt="it horazm" />
         </div>
       </section>
 

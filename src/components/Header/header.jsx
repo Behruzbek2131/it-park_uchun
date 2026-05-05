@@ -3,7 +3,7 @@ import './header.css';
 import { Link } from 'react-router-dom';
 
 // TeacherDetail.jsx yoki Teacher.jsx ichida
-import mentorImg from '../../assets/image/iticon.jpg'; 
+import mentorsImg from '../../assets/image/iticon.jpg'; 
 
 const Header = () => {
   // Menyu ochiq yoki yopiqligini tekshirish uchun state
@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header_img">
-        <img src={mentorImg} alt="it icon" />
+        <img src={mentorsImg} alt="it icon" />
       </div>
 
       {/* Burger tugmasi: faqat mobil versiyada ko'rinadi */}
