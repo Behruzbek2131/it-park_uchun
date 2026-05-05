@@ -39,7 +39,7 @@ const Home = () => {
                         <h3>Mentor Ismi</h3>
                         <p>Mutaxassislik: Frontend Dasturlash</p>
                         <p>5 yillik tajriba, 100+ loyihalar</p>
-                        <Link to="/teacher/1" className="btn_sub">Batafsil</Link>
+                        <Link to="/teachers/1" className="btn_sub">Batafsil</Link>
                     </div>
                 </div>
                 <div className="mentor_card">
@@ -47,7 +47,7 @@ const Home = () => {
                         <h3>Mentor Ismi</h3>
                         <p>Mutaxassislik: Frontend Dasturlash</p>
                         <p>5 yillik tajriba, 100+ loyihalar</p>
-                        <Link to="/teacher/2" className="btn_sub">Batafsil</Link>
+                        <Link to="/teachers/2" className="btn_sub">Batafsil</Link>
                     </div>
                     <div className="mentor_img">
                         <img src="src/assets/image/mentor.jpg" alt="mentor" />
@@ -61,7 +61,7 @@ const Home = () => {
                         <h3>Mentor Ismi</h3>
                         <p>Mutaxassislik: Frontend Dasturlash</p>
                         <p>5 yillik tajriba, 100+ loyihalar</p>
-                        <Link to="/teacher/3" className="btn_sub">Batafsil</Link>   
+                        <Link to="/teachers/3" className="btn_sub">Batafsil</Link>   
                     </div>
                 </div>
             </div>

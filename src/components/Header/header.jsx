@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
 
+// TeacherDetail.jsx yoki Teacher.jsx ichida
+import mentorImg from '../../assets/image/iticon.jpg'; 
+
 const Header = () => {
   // Menyu ochiq yoki yopiqligini tekshirish uchun state
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +22,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header_img">
-        <img src="/src/assets/image/iticon.jpg" alt="it icon" />
+        <img src={mentorImg} alt="it icon" />
       </div>
 
       {/* Burger tugmasi: faqat mobil versiyada ko'rinadi */}
