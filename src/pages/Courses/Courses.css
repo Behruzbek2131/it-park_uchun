@@ -1,0 +1,152 @@
+.courses_page {
+    background-color: #0b0b0b;
+    color: white;
+    padding: 120px 8% 80px;
+    min-height: 100vh;
+  }
+  
+  .courses_header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .courses_header h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+  }
+  
+  .courses_header p {
+    color: #888;
+    font-size: 18px;
+  }
+  
+  /* Grid joylashuvi */
+  .courses_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  /* Kurs Kartochkasi */
+  .course_card {
+    background: #161616;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .course_card:hover {
+    transform: translateY(-10px);
+    border-color: #00a82d;
+    box-shadow: 0 20px 40px rgba(0, 168, 45, 0.1);
+  }
+  
+  /* Rasm o'rnidagi qora joy */
+  .course_placeholder {
+    height: 180px;
+    background: #000; /* Qora rang */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #222;
+  }
+  
+  .course_placeholder span {
+    font-size: 50px;
+    font-weight: 800;
+    color: #00a82d;
+    opacity: 0.8;
+    letter-spacing: 5px;
+  }
+  
+  /* Kartochka ichidagi matnlar */
+  .course_content {
+    padding: 30px;
+  }
+  
+  .course_content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .course_desc {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+    height: 70px; /* Matnlar bir xil turishi uchun */
+    margin-bottom: 20px;
+  }
+  
+  .course_info_row {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    margin-bottom: 25px;
+    font-size: 13px;
+    color: #00a82d;
+    font-weight: 600;
+  }
+  
+  /* Batafsil tugmasi */
+  .details_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    
+    /* Ranglar va Border */
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #333;
+    
+    /* Shakli */
+    padding: 14px 24px;
+    border-radius: 14px;
+    text-decoration: none; /* Link chizig'ini olib tashlaydi */
+    font-weight: 600;
+    font-size: 15px;
+    
+    /* Animatsiya */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%; /* Kartochka bo'ylab to'liq kenglik */
+  }
+  
+  /* Tugma ustiga borganda */
+  .details_btn:hover {
+    background: #00a82d; /* IT Park Green */
+    border-color: #00a82d;
+    box-shadow: 0 10px 20px rgba(0, 168, 45, 0.2);
+    color: white;
+  }
+  
+  /* Strelka animatsiyasi */
+  .arrow_icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .details_btn:hover .arrow_icon {
+    transform: translateX(8px); /* Strelka o'ngga siljiydi */
+  }
+  
+  /* Bosilgandagi effekt */
+  .details_btn:active {
+    transform: scale(0.97);
+  }
+  
+  /* Mobil moslashuv */
+  @media (max-width: 600px) {
+    .courses_grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .courses_header h1 {
+      font-size: 32px;
+    }
+  }

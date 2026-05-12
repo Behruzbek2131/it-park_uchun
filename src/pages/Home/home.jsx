@@ -1,73 +1,91 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import './home.css';
-
-import heroImg from '../../assets/image/it_horazm.jpg';
-import mentorImg from '../../assets/image/mentor.jpg'; 
+import ITimg from '../../assets/image/it_horazm.jpg';
 
 const Home = () => {
+  const [courseChoice, setCourseChoice] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(courseChoice.trim()) {
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 3000); // 3 soniyadan keyin xabarni o'chirish
+    }
+  };
+
   return (
     <div className="home_page">
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section - Jalb qiluvchi rasm va matn */}
       <section className="hero_section">
         <div className="hero_text">
-          <h1>Xorazmning Eng Kuchli <span className="green_text">IT Mentorlaridan</span> Bilim Oling</h1>
-          <p>Nazariya va amaliyotni birlashtirgan holda, real loyihalar ustida ishlashni o'rganing.</p>
+          <span className="badge">Yangi imkoniyatlar maskani</span>
+          <h1>IT Park bilan <br/> <span className="green_text">O'z kelajagingni</span> qur!</h1>
+          <p>
+            Biz bilan noldan boshlab professional darajagacha chiqing. 
+            Eng zamonaviy kurslar va tajribali mentorlar sizni kutmoqda.
+          </p>
           <div className="hero_btns">
-            <Link to="/teachers" className="btn_main">O'qituvchilar bilan tanishish</Link>
-            <Link to="/contact" className="btn_sub">Kursga yozilish</Link>
+            <button className="main_btn">Kurslarni ko'rish</button>
+            <button className="secondary_btn">Maslahat olish</button>
           </div>
         </div>
-        <div className="hero_image">
-            <img src={heroImg} alt="it horazm" />
+        
+        <div className="hero_img">
+          <div className="img_wrapper">
+            <img src={ITimg} alt="IT Park" />
+            <div className="floating_card">
+              <span>🚀 20+ Zamonaviy Kurslar</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 2. Stats Section */}
+      {/* 2. Statistika - Ishonchni oshirish uchun */}
       <section className="stats_bar">
-        <div className="stat_item"><h3>50+</h3><p>Mentorlar</p></div>
-        <div className="stat_item"><h3>15+</h3><p>IT Kurslar</p></div>
-        <div className="stat_item"><h3>500+</h3><p>Muvaffaqiyatli loyihalar</p></div>
+        <div className="stat_item">
+          <h2>10k+</h2>
+          <p>Bitiruvchilar</p>
+        </div>
+        <div className="stat_divider"></div>
+        <div className="stat_item">
+          <h2>95%</h2>
+          <p>Ishga joylashish</p>
+        </div>
+        <div className="stat_divider"></div>
+        <div className="stat_item">
+          <h2>50+</h2>
+          <p>Hamkor kompaniyalar</p>
+        </div>
       </section>
 
-      
-      <section className="mentor_preview">
-         <h2>Bizning Top Mentorlar</h2>
-            <div className="mentor_cards">
-                <div className="mentor_card">
-                    <div className="mentor_img">
-                        <img src={mentorImg} alt="mentor" />
-                    </div>
-                    <div className="mentor_text">
-                        <h3>Mentor Ismi</h3>
-                        <p>Mutaxassislik: Frontend Dasturlash</p>
-                        <p>5 yillik tajriba, 100+ loyihalar</p>
-                        <Link to="/teachers/1" className="btn_sub">Batafsil</Link>
-                    </div>
-                </div>
-                <div className="mentor_card">
-                    <div className="mentor_text">
-                        <h3>Mentor Ismi</h3>
-                        <p>Mutaxassislik: Frontend Dasturlash</p>
-                        <p>5 yillik tajriba, 100+ loyihalar</p>
-                        <Link to="/teachers/2" className="btn_sub">Batafsil</Link>
-                    </div>
-                    <div className="mentor_img">
-                        <img src={mentorImg} alt="mentor" />
-                    </div>
-                </div>
-                <div className="mentor_card">
-                    <div className="mentor_img">
-                        <img src={mentorImg} alt="mentor" />
-                    </div>
-                    <div className="mentor_text">
-                        <h3>Mentor Ismi</h3>
-                        <p>Mutaxassislik: Frontend Dasturlash</p>
-                        <p>5 yillik tajriba, 100+ loyihalar</p>
-                        <Link to="/teachers/3" className="btn_sub">Batafsil</Link>   
-                    </div>
-                </div>
+      {/* 3. Interaktiv Input - Qiziqtirish uchun */}
+      <section className="interest_section">
+        <div className={`interest_card ${isSubmitted ? 'success' : ''}`}>
+          {isSubmitted ? (
+            <div className="thanks_msg">
+              <h2>Ajoyib! 🎉</h2>
+              <p>Tez orada bizning mutaxassislarimiz {courseChoice} bo'yicha siz bilan bog'lanishadi.</p>
             </div>
+          ) : (
+            <>
+              <h3>Kelajagingizni qaysi sohada ko'rasiz?</h3>
+              <p>Sizga mos kursni birga tanlaymiz.</p>
+              <form className="interest_form" onSubmit={handleSubmit}>
+                <div className="input_group">
+                  <input 
+                    type="text" 
+                    placeholder="Qaysi kursimiz sizga ma'qul? (masalan: Frontend)" 
+                    value={courseChoice}
+                    onChange={(e) => setCourseChoice(e.target.value)}
+                    required
+                  />
+                  <button type="submit">Menga yordam bering</button>
+                </div>
+              </form>
+            </>
+          )}
+        </div>
       </section>
     </div>
   );

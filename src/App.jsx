@@ -14,6 +14,9 @@ import NotFound from './pages/NotFound/notFound';
 
 // Global stillar
 import './styles/variables.css'; 
+import Preparation from './pages/Preparation/Preparation.jsx';
+import Courses from './pages/Courses/Courses.jsx';
+import CoursesDetail from './pages/CoursesDetail/CoursesDetail.jsx';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/teachers" element={<Teachers />} />
+            <Route path='/preparation' element={<Preparation />} />
+            <Route path='/courses' element={<Courses />} />
+            <Route path='/coursesDetail/:id' element={<CoursesDetail />}/>  
             {/* Dinamik ID orqali o'qituvchi profiliga o'tish */}
             <Route path="/teachers/:id" element={<TeacherDetail />} />
             <Route path="/contact" element={<Contact />} />

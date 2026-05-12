@@ -1,69 +1,64 @@
-.header{
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 10%;
     background-color: rgb(37, 36, 36);
+    position: relative;
+    z-index: 1001; /* Header har doim tepada */
 }
 
-.header_img{
+.header_img {
     width: 90px;
     height: auto;
-
 }
 
-.header_img img{
+.header_img img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
 
-.header_link{
+.header_link {
     font-size: 20px;
     font-weight: 600;
     display: flex;
     gap: 80px;
 }
 
-.header_link a{
+.header_link a {
     color: white;
     text-decoration: none;
     letter-spacing: 1px;
     border-bottom: 1px solid transparent;
 }
 
-.header_link a:hover{
+.header_link a:hover {
     color: green;
     transition: 0.4s;
     border-bottom: 1px solid green;
 }
 
-.contact_btn{
+.contact_btn {
     padding: 15px 25px;
     background-color: green;
     border-radius: 10px;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 
-.contact_btn:hover{
-    background-color: transparent;
-    border: 2px solid green;
-    transition: 0.2s;
-}
-
-.contact_btn a{
+.contact_btn a {
     color: white;
     text-decoration: none;
     font-weight: 600;
 }
 
-/* ... avvalgi kodlaringiz saqlanib qoladi ... */
-
 /* Burger tugmasi stili */
 .burger_menu {
-    display: none; /* Desktopda yashirin */
+    display: none;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001; /* Linklar ustida ko'rinishi uchun */
+    padding: 5px;
 }
 
 .burger_menu div {
@@ -74,50 +69,79 @@
     transition: 0.4s;
 }
 
-/* Desktop va Mobile tugmalarini boshqarish */
+/* Desktop va Mobile boshqaruvi */
 .mobile_only { display: none; }
 .desktop_only { display: block; }
 
 /* MEDIA QUERY: Mobil qurilmalar uchun */
 @media (max-width: 992px) {
-    .header {
-        padding: 15px 5%; /* Yon bo'shliqlarni kamaytiramiz */
-    }
-
     .burger_menu {
-        display: block; /* Burger chiqadi */
+        display: block;
     }
 
-    .desktop_only {
-        display: none; /* Desktop tugmasi yashiriladi */
+    /* Burger ochiq turganda chiziqlarni qizil qilish (X shakli) */
+    .burger_menu.open div {
+        background-color: #ff4d4d;
     }
 
-    .mobile_only {
-        display: block; /* Menyu ichidagi tugma chiqadi */
-    }
+    .desktop_only { display: none; }
+    .mobile_only { display: block; width: 100%; }
 
     .header_link {
         position: fixed;
-        right: -100%; /* Dastlab menyu o'ngda ko'rinmaydi */
+        right: -100%; 
         top: 0;
-        width: 70%; /* Ekraning 70% qismini egallaydi */
+        width: 80%; /* Biroz kengroq */
         height: 100vh;
-        background-color: #1a1a1a;
-        flex-direction: column; /* Linklar ustma-ust tushadi */
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transition: 0.5s ease;
-        z-index: 999;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        background-color: #0f0f0f;
+        flex-direction: column;
+        justify-content: flex-start; /* Tepadun boshlanadi */
+        align-items: flex-start;    /* Chapdan boshlanadi */
+        gap: 12px;
+        padding: 100px 30px; /* Tepadagi X dan qochish uchun */
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     }
 
     .header_link.active {
-        right: 0; /* Menyu ekranga chiqadi */
+        right: 0;
+    }
+
+    /* Linklarni buttonga o'xshatish */
+    .header_link a {
+        width: 100%;
+        background-color: #1a1a1a;
+        padding: 18px 20px;
+        border-radius: 12px;
+        border: 1px solid #333;
+        font-size: 17px;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .header_link a:hover, .header_link a:active {
+        background-color: #222;
+        border-color: green;
+        border-bottom: 1px solid green; /* Eskisini bekor qilish */
+    }
+
+    /* Bog'lanish tugmasi mobil menyu ichida */
+    .contact_btn.mobile_only {
+        background-color: green;
+        margin-top: 10px;
+        padding: 0; /* a tegini ichida padding bor */
+        border: none;
+    }
+
+    .contact_btn.mobile_only a {
+        text-align: center;
+        background-color: green;
+        border: none;
     }
 
     /* Burger animatsiyasi (X shakli) */
-    .open .bar1 { transform: rotate(-45deg) translate(-5px, 6px); }
-    .open .bar2 { opacity: 0; }
-    .open .bar3 { transform: rotate(45deg) translate(-5px, -7px); }
+    .burger_menu.open .bar1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .burger_menu.open .bar2 { opacity: 0; }
+    .burger_menu.open .bar3 { transform: rotate(45deg) translate(-5px, -7px); }
 }

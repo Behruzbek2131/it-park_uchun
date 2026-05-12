@@ -1,0 +1,339 @@
+.detail_page {
+    background-color: #0b0b0b;
+    color: white;
+    min-height: 100vh;
+    padding: 120px 8% 80px;
+  }
+  
+  /* Orqaga tugmasi */
+  .back_btn {
+    background: transparent;
+    color: #888;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: 0.3s;
+  }
+  
+  .back_btn:hover {
+    color: #00a82d;
+    border-color: #00a82d;
+  }
+  
+  /* Konteyner */
+  .detail_container {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 50px;
+  }
+  
+  /* Chap tomon - Ma'lumotlar */
+  .category_tag {
+    color: #00a82d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .detail_main h1 {
+    font-size: 48px;
+    margin-bottom: 25px;
+  }
+  
+  .full_description {
+    font-size: 18px;
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+  
+  .what_you_learn h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .what_you_learn ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .what_you_learn li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: #ccc;
+  }
+  
+  .what_you_learn li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00a82d;
+    font-weight: bold;
+  }
+  
+  /* O'ng tomon - Sidebar kartochkasi */
+  .detail_sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+  }
+  
+  .price_card {
+    background: #161616;
+    border-radius: 30px;
+    border: 1px solid #222;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+  
+  .placeholder_img {
+    width: 100%;
+    height: 200px;
+    background: #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    border: 1px solid #333;
+  }
+  
+  .placeholder_img span {
+    font-size: 60px;
+    color: #00a82d;
+    font-weight: bold;
+  }
+  
+  .price_info {
+    margin-bottom: 25px;
+  }
+  
+  .price_label {
+    color: #777;
+    display: block;
+  }
+  
+  .price_value {
+    font-size: 32px;
+    color: #fff;
+  }
+  
+  .price_value small {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .specs {
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .spec_item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  
+  .spec_item span { color: #888; }
+  .spec_item b { color: #fff; }
+  
+  .enroll_btn {
+    width: 100%;
+    background: #00a82d;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .enroll_btn:hover {
+    background: #00ce37;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 168, 45, 0.3);
+  }
+  
+  /* --- MODAL STYLES --- */
+
+/* Orqa fonni xiralashtirish */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Qora shaffof fon */
+    backdrop-filter: blur(10px);    /* Shisha effekti */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;                  /* Hammasidan tepada turadi */
+    padding: 20px;
+  }
+  
+  /* Modal oynasining o'zi */
+  .modal_content {
+    background: #111;
+    border: 1px solid #00a82d;      /* Yashil chegara */
+    padding: 40px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 168, 45, 0.15); /* Yashil nur */
+    text-align: center;
+    animation: modalFadeIn 0.3s ease-out;
+  }
+  
+  @keyframes modalFadeIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Yopish tugmasi (X) */
+  .close_btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .close_btn:hover {
+    color: #ff4d4d;
+    transform: rotate(90deg);
+  }
+  
+  .modal_content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .modal_content p {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  
+  /* Forma elementlari */
+  .enroll_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input_group_modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .input_group_modal label {
+    font-size: 12px;
+    color: #00a82d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  
+  .input_group_modal input {
+    width: 100%;
+    background: #000;
+    border: 1px solid #222;
+    padding: 15px 20px;
+    border-radius: 15px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .input_group_modal input:focus {
+    border-color: #00a82d;
+    box-shadow: 0 0 10px rgba(0, 168, 45, 0.1);
+  }
+  
+  /* Modal ichidagi yuborish tugmasi */
+  .modal_submit_btn {
+    background: #00a82d;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 168, 45, 0.2);
+  }
+  
+  .modal_submit_btn:hover {
+    background: #00ce37;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 206, 55, 0.3);
+  }
+  
+  .modal_submit_btn:active {
+    transform: translateY(0);
+  }
+  /* Mobile */
+  @media (max-width: 992px) {
+    .detail_container {
+      grid-template-columns: 1fr;
+    }
+    .detail_sidebar {
+      position: static;
+    }
+    .detail_main h1 {
+      font-size: 32px;
+    }
+
+    .modal_content {
+        padding: 30px 20px; /* Telefonlarda ichki bo'shliqni kamaytiramiz */
+        width: 95%;         /* Ekran chetiga juda yaqin kelishi uchun */
+        border-radius: 20px;
+      }
+    
+      .modal_content h2 {
+        font-size: 22px;    /* Sarlavhani kichraytiramiz */
+      }
+    
+      .modal_content p {
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+    
+      .input_group_modal input {
+        padding: 12px 15px; /* Inputlarni biroz ixchamroq qilamiz */
+        font-size: 14px;
+      }
+    
+      .modal_submit_btn {
+        padding: 15px;      /* Tugmani qulayroq qilamiz */
+        font-size: 15px;
+      }
+    
+      .close_btn {
+        top: 10px;
+        right: 15px;
+        font-size: 28px;    /* Yopish tugmasini tepaga yaqinlashtiramiz */
+      }
+  }
