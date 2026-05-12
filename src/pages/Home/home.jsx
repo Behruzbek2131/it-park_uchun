@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './home.css';
 import ITimg from '../../assets/image/it_horazm.jpg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [courseChoice, setCourseChoice] = useState("");
@@ -26,8 +27,8 @@ const Home = () => {
             Eng zamonaviy kurslar va tajribali mentorlar sizni kutmoqda.
           </p>
           <div className="hero_btns">
-            <button className="main_btn">Kurslarni ko'rish</button>
-            <button className="secondary_btn">Maslahat olish</button>
+            <Link to="/courses" className="main_btn">Kurslarni ko'rish</Link>
+            <Link to="/teachers" className="main_btn outline">Mentorlarimiz</Link>
           </div>
         </div>
         

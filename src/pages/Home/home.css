@@ -54,6 +54,27 @@
     border-radius: 20px;
     border: 1px solid #333;
   }
+  .hero_btns {
+    display: flex;
+    gap: 20px;
+  }
+  .main_btn{
+    background: #00a82d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 168, 45, 0.3);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    text-decoration: none;
+  }
   
   /* Statistika - Qora fonli uzun panel */
   .stats_bar {
@@ -149,11 +170,11 @@
   
   /* Zamonaviy Tugma */
   .input_group button {
-    width: 40%;
+    width: 100%;
     background: #00a82d;
     color: white;
     border: none;
-    padding: 18px;
+    padding: 10px;
     border-radius: 18px;
     font-size: 17px;
     font-weight: 600;
@@ -197,8 +218,11 @@
       border: 1px solid #333;
       border-radius: 12px;
     }
+    .main_btn {
+      font-size: 15px
+    }
     .input_group button {
-      padding: 18px;
+      padding: 10px;
     }
     .stats_bar {
         flex-direction: column; /* Elementlarni ustma-ust taxlaymiz */
