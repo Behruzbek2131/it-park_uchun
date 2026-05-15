@@ -94,6 +94,7 @@
     color: white;
     outline: none;
     transition: 0.3s;
+    resize: none;
   }
   
   .input_group input:focus, 
